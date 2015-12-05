@@ -1,5 +1,5 @@
 # lab05-udemy-spring-cloud-ribbon
-Spring Cloud Eureka and Ribbon demo
+## Spring Cloud Eureka and Ribbon demo
 
 Start the following modules:
 * lab01 with all 3 instances

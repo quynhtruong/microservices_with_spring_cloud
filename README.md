@@ -1,2 +1,3 @@
-# udemy_microservices_with_spring_cloud
-udemy: Microservices with Spring Cloud
+# Parent for all udemy: Microservices with Spring Cloud lab exercises
+
+See for specific instructions in the modules.
