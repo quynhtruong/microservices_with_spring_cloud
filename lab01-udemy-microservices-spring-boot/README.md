@@ -10,13 +10,21 @@ and call with curl or a browser the url http://localhost:xxxxx/teams where xxxxx
 
 ## LAB-04
 
-Run three applications with
+Run the three applications with
 
 `java -jar -Dspring.profiles.active=lab-04-inst-01 lab01-udemy-microservices-spring-boot-0.0.1-SNAPSHOT.jar`
 
 `java -jar -Dspring.profiles.active=lab-04-inst-02 lab01-udemy-microservices-spring-boot-0.0.1-SNAPSHOT.jar`
 
 `java -jar -Dspring.profiles.active=lab-04-inst-03 lab01-udemy-microservices-spring-boot-0.0.1-SNAPSHOT.jar`
+
+or 
+
+`mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=lab-04-inst-01"`
+
+`mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=lab-04-inst-02"`
+
+`mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=lab-04-inst-03"`
 
 Select one of the three application from the Eureka server and call
 `http://your-host-name:the-port/aggregate`

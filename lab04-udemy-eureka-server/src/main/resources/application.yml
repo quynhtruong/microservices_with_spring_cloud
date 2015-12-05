@@ -2,16 +2,17 @@
 ---
 spring:
   profiles: default
+  application:
+    name: eureka-server-standalone  
 server:
   port: 8010  
 eureka:
-  instance:
-    hostname: eurekahost 
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/    
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/
       
 # side-by-side on localhost -- which is unrealistic in production -- but does illustrate how multiple instances collaborate.
 #
@@ -28,7 +29,7 @@ eureka:
 ---
 spring:
   application:
-    name: eureka-server   
+    name: eureka-server-clustered
   profiles: primary
 server:
   port: 8011  
@@ -44,7 +45,7 @@ eureka:
 ---
 spring:
   application:
-    name: eureka-server     
+    name: eureka-server-clustered
   profiles: secondary
 server:
   port: 8012
@@ -61,7 +62,7 @@ eureka:
 spring:
   profiles: tertiary
   application:
-    name: eureka-server      
+    name: eureka-server-clustered
 server:
   port: 8013
 eureka:
