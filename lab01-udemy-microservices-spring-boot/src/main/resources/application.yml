@@ -1,0 +1,45 @@
+## YAML Template.
+---
+spring:
+   jpa:
+      show-sql: true
+      hibernate:
+         ddl-auto: update
+   properties:
+      hibernate:
+#         dialect: org.hibernate.dialect.MySQL5Dialect
+         naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#   datasource:
+#      url: jdbc:mysql://127.0.0.1:3306/lab01_udemy?createDatabaseIfNotExist=true
+#      username: root
+#      password: root
+#      driverClassName: com.mysql.jdbc.Driver
+#      testWhileIdle: true
+#      validationQuery: SELECT 1
+
+# Eureka settings
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+         
+server:
+    port: ${PORT:${SERVER_PORT:0}}   # Select any available port if neither port nor server port are specified.
+
+content: Default content    
+
+# ServiceId specific content
+---      
+spring:
+   profiles: lab-04-inst-01
+content: Content from lab-04-inst-01
+
+---         
+spring:
+   profiles: lab-04-inst-02
+content: Content from lab-04-inst-02
+
+---         
+spring:
+   profiles: lab-04-inst-03
+content: Content from lab-04-inst-03
