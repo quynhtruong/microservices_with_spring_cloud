@@ -1,5 +1,5 @@
-# lab05-udemy-spring-cloud-ribbon
-## Spring Cloud Eureka and Ribbon demo
+# lab09-udemy-spring-cloud-Zuul
+## Spring Cloud Simple Zuul Gateway
 
 Start the following modules:
 * lab01 with all 3 instances (serviceId will be lab-04)
