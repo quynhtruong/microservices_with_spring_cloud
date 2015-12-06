@@ -6,11 +6,15 @@ import de.thtesche.udemy.domain.Team;
 import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.PostConstruct;
+import javax.servlet.Filter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.filter.ShallowEtagHeaderFilter;
+
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -19,11 +23,11 @@ public class MicroservicesBootApplication extends SpringBootServletInitializer {
   @Autowired
   TeamDao teamDao;
 
-  /**
-   * Used when run as a JAR
-   *
-   * @param args
-   */
+  @Bean
+  public Filter shallowEtagHeaderFilter() {
+    return new ShallowEtagHeaderFilter();
+  }
+
   public static void main(String[] args) {
     SpringApplication.run(MicroservicesBootApplication.class, args);
   }
