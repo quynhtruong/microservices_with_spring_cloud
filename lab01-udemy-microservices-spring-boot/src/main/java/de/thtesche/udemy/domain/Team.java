@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -17,7 +18,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @XmlRootElement
 @Entity
 @RestResource(path = "teams", rel = "teams")
-public class Team  {
+public class Team {
 
   @Id
   @GeneratedValue
@@ -28,6 +29,8 @@ public class Team  {
   @OneToMany(cascade = CascadeType.ALL)
   @JoinColumn(name = "teamId")
   private Set<Player> players;
+  @Version
+  private long version;
 
   public Team() {
     super();

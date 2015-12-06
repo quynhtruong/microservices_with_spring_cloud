@@ -3,6 +3,7 @@ package de.thtesche.udemy.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -20,6 +21,8 @@ public class Player {
   private long id;
   private String name;
   private String position;
+  @Version
+  private long version;
 
   public Player() {
     super();
