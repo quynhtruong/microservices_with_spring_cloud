@@ -39,6 +39,7 @@ public class MicroservicesBootApplication extends SpringBootServletInitializer {
     players.add(new Player("Player 3", "Position 3"));
 
     Team team = new Team("A-Team", "Berlin", players);
+    team.setMascote("Berlin bear");
     teamDao.save(team);
   }
 

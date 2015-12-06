@@ -10,6 +10,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface TeamDao extends CrudRepository<Team, Long> {
 
+  @Override
   List<Team> findAll();
 
   Team findByName(String name);

@@ -10,6 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.config.Projection;
 
 /**
  *
@@ -41,6 +42,18 @@ public class Team {
     this.name = name;
     this.location = location;
     this.players = players;
+  }
+
+  @Projection(name = "inlinePlayers", types = {Team.class})
+  public interface inlinePlayers {
+
+    String getName();
+
+    String getLocation();
+
+    String getMascote();
+
+    Set<Player> getPlayers();
   }
 
   /**

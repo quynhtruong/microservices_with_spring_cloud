@@ -10,6 +10,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface PlayerDao extends CrudRepository<Player, Long> {
 
+  @Override
   List<Player> findAll();
 
   Player findByName(String name);
