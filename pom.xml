@@ -11,7 +11,8 @@
       <module>lab03-udemy-spring-cloud-config-server</module>
       <module>lab04-udemy-eureka-server</module>
       <module>lab05-udemy-spring-cloud-ribbon</module>
-      <module>lab09-zuul-simple</module>        
+      <module>lab09-zuul-simple</module>
+      <module>lab06-udemy-spring-cloud-feign</module>
    </modules>
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

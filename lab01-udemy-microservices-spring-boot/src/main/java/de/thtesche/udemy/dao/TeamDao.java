@@ -15,4 +15,10 @@ public interface TeamDao extends CrudRepository<Team, Long> {
 
   Team findByName(String name);
 
+  @Override
+  public <S extends Team> S save(S entity);
+
+  @Override
+  public void delete(Team entity);
+
 }
