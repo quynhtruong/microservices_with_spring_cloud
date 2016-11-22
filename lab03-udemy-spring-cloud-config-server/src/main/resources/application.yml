@@ -5,9 +5,7 @@ spring:
       config:
          server:
             git:
-               uri: https://github.com/thtesche/udemy_microservices_with_spring_cloud.git
-               searchPaths: configdata
-               
-               
+               uri: https://github.com/quynhtruong/spring-cloud-files
+
 server:
     port: 8888
